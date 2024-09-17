@@ -1,0 +1,137 @@
+{
+  "kind": "CATEGORY",
+  "name": "Sengo1视觉传感器",
+  "colour": "#EF5411",
+  "contents": [
+    {
+      "kind": "LABEL",
+      "text": "设置模块"
+    },
+    {
+      "kind": "BLOCK",
+      "type": "Sengo1Begin"
+    },
+    {
+      "kind": "BLOCK",
+      "type": "Sengo1LedSetColor",
+      "inputs": {
+        "level": {
+          "shadow": {
+            "type": "math_number",
+            "fields": {
+              "NUM": 50
+            }
+          }
+        }
+      }
+    },
+    {
+      "kind": "BLOCK",
+      "type": "Sengo1VisionSetStatus"
+    },
+    {
+      "kind": "BLOCK",
+      "type": "Sengo1SetColorParam",
+      "inputs": {
+        "x": {
+          "shadow": {
+            "type": "math_number",
+            "fields": {
+              "NUM": 50
+            }
+          }
+        },
+        "y": {
+          "shadow": {
+            "type": "math_number",
+            "fields": {
+              "NUM": 50
+            }
+          }
+        },
+        "w": {
+          "shadow": {
+            "type": "math_number",
+            "fields": {
+              "NUM": 3
+            }
+          }
+        },
+        "h": {
+          "shadow": {
+            "type": "math_number",
+            "fields": {
+              "NUM": 4
+            }
+          }
+        }
+      }
+    },
+    {
+      "kind": "BLOCK",
+      "type": "Sengo1SetBlodParam",
+      "inputs": {
+        "w": {
+          "shadow": {
+            "type": "math_number",
+            "fields": {
+              "NUM": 3
+            }
+          }
+        },
+        "h": {
+          "shadow": {
+            "type": "math_number",
+            "fields": {
+              "NUM": 4
+            }
+          }
+        }
+      }
+    },
+    {
+      "kind": "LABEL",
+      "text": "运行模块"
+    },
+    {
+      "kind": "BLOCK",
+      "type": "Sengo1Detected"
+    },
+    {
+      "kind": "BLOCK",
+      "type": "Sengo1ColorRcgValue"
+    },
+    {
+      "kind": "BLOCK",
+      "type": "Sengo1GetValue"
+    },
+    {
+      "kind": "BLOCK",
+      "type": "Sengo1LineValue"
+    },
+    {
+      "kind": "BLOCK",
+      "type": "Sengo1QrCodeValue"
+    },
+    {
+      "kind": "BLOCK",
+      "type": "Sengo1GetQrCodeValue"
+    },
+    {
+      "kind": "BLOCK",
+      "type": "Sengo1DetectedColor"
+    },
+    {
+      "kind": "BLOCK",
+      "type": "Sengo1DetectedBlob"
+    },
+    {
+      "kind": "BLOCK",
+      "type": "Sengo1DetectedBall"
+    },
+    {
+      "kind": "BLOCK",
+      "type": "Sengo1DetectedCard"
+    }
+  ]
+}
