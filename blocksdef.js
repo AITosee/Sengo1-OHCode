@@ -83,10 +83,12 @@ const SENGO1_COLORPARAM_MESSAGE0 =
 const SENGO1_BOLDPARAM_MESSAGE0 =
   "设置  Sengo1  %1  最小宽度 %2 最小高度 %3 检测标签 %4";
 
+const SENGO1_FACEPARAM_MESSAGE0 = "设置  Sengo1  %1  %2 编号%3";
+
 const SENGO1_DETECTED_MESSAGE0 = "  Sengo1  %1  返回的结果数量";
 const SENGO1_GET_VALUE_MESSAGE0 = "  Sengo1  %1  返回的%2";
 const SENGO1_COLORRCGVALUE_MESSAGE0 = "  Sengo1  颜色识别  返回的 %1";
-const SENGO1_LINEVALUE_MESSAGE0 = "  Sengo1  线段检测  返回的 %1";
+const SENGO1_LINEVALUE_MESSAGE0 = "  Sengo1  线条检测  返回的 %1";
 const SENGO1_QRRCGVALUE_MESSAGE0 = "  Sengo1  二维码识别  返回的 %1";
 const SENGO1_GET_QRCODEVALUE_MESSAGE0 = "  Sengo1  二维码  返回的结果字符串";
 const SENGO1_DETECTEDCOLOR_MESSAGE0 = "  Sengo1  颜色识别  识别到 %1";
@@ -307,6 +309,38 @@ Blockly.Blocks["Sengo1SetBlodParam"] = {
       nextStatement: null,
       previousStatement: null,
       message0: SENGO1_BOLDPARAM_MESSAGE0,
+    });
+  },
+};
+
+Blockly.Blocks["Sengo1SetFaceParam"] = {
+  init: function () {
+    this.jsonInit({
+      colour: Sentry_SetupMode_Color,
+      args0: [
+        {
+          name: "VisionType",
+          options: [[SENTRY_VISION_VISIONFACE, "sengo1_vision_e.kVisionFace"]],
+          type: "field_dropdown",
+        },
+        {
+          name: "lable",
+          options: [
+            ["保存数据并", "1"],
+            ["删除数据", "0"],
+          ],
+          type: "field_dropdown",
+        },
+        {
+          check: "Number",
+          type: "input_value",
+          name: "objid",
+        },
+      ],
+      inputsInline: true,
+      nextStatement: null,
+      previousStatement: null,
+      message0: SENGO1_FACEPARAM_MESSAGE0,
     });
   },
 };
@@ -552,15 +586,23 @@ pythonGenerator.forBlock["Sengo1Begin"] = function (block) {
 };
 
 // 设置 LEDn
-pythonGenerator.forBlock['Sentry1LedSetColor'] = function (block) {
+pythonGenerator.forBlock["Sentry1LedSetColor"] = function (block) {
+  var detected_color = block.getFieldValue("detected_color");
+  var undetected_color = block.getFieldValue("undetected_color");
+  var level =
+    Blockly.Python.valueToCode(block, "level", Blockly.Python.ORDER_NONE) ||
+    "1";
+  var code =
+    "sengo1" +
+    ".LedSetColor(" +
+    detected_color +
+    ", " +
+    undetected_color +
+    ", " +
+    level +
+    ")\n";
 
-
-  var detected_color = block.getFieldValue('detected_color');
-  var undetected_color = block.getFieldValue('undetected_color');
-  var level = Blockly.Python.valueToCode(block, "level", Blockly.Python.ORDER_NONE) || '1';
-  var code = 'sengo1' + '.LedSetColor(' + detected_color + ', ' + undetected_color + ', ' + level + ')\n';
-
-  Blockly.Python.definitions_['import_Sentry'] = 'from Sentry import *';
+  Blockly.Python.definitions_["import_Sentry"] = "from Sentry import *";
 
   return code;
 };
@@ -585,11 +627,9 @@ pythonGenerator.forBlock["Sengo1SetColorParam"] = function (block) {
     pythonGenerator.valueToCode(block, "w", pythonGenerator.ORDER_NONE) || "1";
   var h =
     pythonGenerator.valueToCode(block, "h", pythonGenerator.ORDER_NONE) || "1";
-  var objid = pythonGenerator.valueToCode(
-    block,
-    "objid",
-    pythonGenerator.ORDER_ATOMIC
-  );
+  var objid =
+    pythonGenerator.valueToCode(block, "objid", pythonGenerator.ORDER_ATOMIC) ||
+    1;
   var code =
     "sengo1" +
     ".SetParam(" +
@@ -630,6 +670,28 @@ pythonGenerator.forBlock["Sengo1SetBlodParam"] = function (block) {
     ", " +
     h +
     ", " +
+    lable +
+    "]" +
+    ", " +
+    objid +
+    ")\n";
+
+  return code;
+};
+
+// Face   参数
+pythonGenerator.forBlock["Sengo1SetFaceParam"] = function (block) {
+  var lable = block.getFieldValue("lable");
+  var objid = pythonGenerator.valueToCode(
+    block,
+    "objid",
+    pythonGenerator.ORDER_ATOMIC
+  );
+  var code =
+    "sengo1" +
+    ".SetParam(" +
+    "sengo1_vision_e.kVisionFace, " +
+    "[0, 0, 0, 0," +
     lable +
     "]" +
     ", " +

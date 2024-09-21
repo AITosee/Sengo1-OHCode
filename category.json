@@ -90,6 +90,20 @@
       }
     },
     {
+      "kind": "BLOCK",
+      "type": "Sengo1SetFaceParam",
+      "inputs": {
+        "objid": {
+          "shadow": {
+            "type": "math_number",
+            "fields": {
+              "NUM": 1
+            }
+          }
+        }
+      }
+    },
+    {
       "kind": "LABEL",
       "text": "运行模块"
     },
