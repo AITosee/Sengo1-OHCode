@@ -74,9 +74,9 @@ const SENTRY_LED_WHITE = "白色";
 // Sengo1模块文本
 const SENGO1_BEGIN_MESSAGE0 = "初始化  Sengo1  端口 %1 地址 %2";
 const SENGO1_LED_SET_COLOR_MESSAGE0 =
-  "设置 Sentry1 LED检测到结果显示 %2 否则 %3 亮度(1~15) %1";
+  "设置  Sengo1  检测到目标时LED显示 %2 否则 %3 亮度(1~15) %1";
 
-const SENGO1_VISION_SET_STATUS_MESSAGE0 = "  Sengo1  %1  算法%2";
+const SENGO1_VISION_SET_STATUS_MESSAGE0 = "设置  Sengo1  %1  算法%2";
 
 const SENGO1_COLORPARAM_MESSAGE0 =
   "设置  Sengo1  %1  中心横坐标 %2 中心纵坐标 %3 宽度 %4 高度 %5";
@@ -91,10 +91,10 @@ const SENGO1_COLORRCGVALUE_MESSAGE0 = "  Sengo1  颜色识别  返回的 %1";
 const SENGO1_LINEVALUE_MESSAGE0 = "  Sengo1  线条检测  返回的 %1";
 const SENGO1_QRRCGVALUE_MESSAGE0 = "  Sengo1  二维码识别  返回的 %1";
 const SENGO1_GET_QRCODEVALUE_MESSAGE0 = "  Sengo1  二维码  返回的结果字符串";
-const SENGO1_DETECTEDCOLOR_MESSAGE0 = "  Sengo1  颜色识别  识别到 %1";
-const SENGO1_DETECTEDBLOB_MESSAGE0 = "  Sengo1  色块检测  检测到 %1块";
-const SENGO1_DETECTEDCARD_MESSAGE0 = "  Sengo1  卡片识别  识别到 %1";
-const SENGO1_DETECTEDBALL_MESSAGE0 = "  Sengo1  球体识别  识别到 %1";
+const SENGO1_DETECTEDCOLOR_MESSAGE0 = " Sengo1  颜色识别  识别到 %1";
+const SENGO1_DETECTEDBLOB_MESSAGE0 = " Sengo1  色块检测  检测到 %1块";
+const SENGO1_DETECTEDCARD_MESSAGE0 = " Sengo1  卡片识别  识别到 %1";
+const SENGO1_DETECTEDBALL_MESSAGE0 = " Sengo1  球体识别  识别到 %1";
 
 const Sentry_SetupMode_Color = "#EF5411";
 const Sentry_RunMode_Color = "#EAA20A";
