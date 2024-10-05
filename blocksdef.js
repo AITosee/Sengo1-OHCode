@@ -296,9 +296,9 @@ Blockly.Blocks["Sengo1SetBlodParam"] = {
           type: "field_dropdown",
           name: "lable",
           options: [
+            [SENTRY_COLOR_RED, "sentry_color_label_e.kColorRed"],
             [SENTRY_COLOR_BLACK, "sentry_color_label_e.kColorBlack"],
             [SENTRY_COLOR_WHITE, "sentry_color_label_e.kColorWhite"],
-            [SENTRY_COLOR_RED, "sentry_color_label_e.kColorRed"],
             [SENTRY_COLOR_GREEN, "sentry_color_label_e.kColorGreen"],
             [SENTRY_COLOR_BLUE, "sentry_color_label_e.kColorBlue"],
             [SENTRY_COLOR_YELLOW, "sentry_color_label_e.kColorYellow"],
@@ -326,7 +326,7 @@ Blockly.Blocks["Sengo1SetFaceParam"] = {
         {
           name: "lable",
           options: [
-            ["保存数据并", "1"],
+            ["保存数据并", "100"],
             ["删除数据", "0"],
           ],
           type: "field_dropdown",
@@ -508,9 +508,9 @@ Blockly.Blocks["Sengo1DetectedBlob"] = {
           type: "field_dropdown",
           name: "ColorLabel",
           options: [
+            [SENTRY_COLOR_RED, "sentry_color_label_e.kColorRed"],
             [SENTRY_COLOR_BLACK, "sentry_color_label_e.kColorBlack"],
             [SENTRY_COLOR_WHITE, "sentry_color_label_e.kColorWhite"],
-            [SENTRY_COLOR_RED, "sentry_color_label_e.kColorRed"],
             [SENTRY_COLOR_GREEN, "sentry_color_label_e.kColorGreen"],
             [SENTRY_COLOR_BLUE, "sentry_color_label_e.kColorBlue"],
             [SENTRY_COLOR_YELLOW, "sentry_color_label_e.kColorYellow"],
