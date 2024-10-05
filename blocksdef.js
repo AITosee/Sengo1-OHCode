@@ -62,7 +62,7 @@ const SENTRY_CARD_TURN_AROUND = "掉头";
 const SENTRY_CARD_PARK = "停车";
 
 // LED color type
-const SENTRY_LED_CLOSE = "关闭";
+const SENTRY_LED_CLOSE = "黑色";
 const SENTRY_LED_RED = "红色";
 const SENTRY_LED_GREEN = "绿色";
 const SENTRY_LED_YELLOW = "黄色";
@@ -89,7 +89,7 @@ const SENGO1_DETECTED_MESSAGE0 = "  Sengo1  %1  返回的结果数量";
 const SENGO1_GET_VALUE_MESSAGE0 = "  Sengo1  %1  返回的%2";
 const SENGO1_COLORRCGVALUE_MESSAGE0 = "  Sengo1  颜色识别  返回的 %1";
 const SENGO1_LINEVALUE_MESSAGE0 = "  Sengo1  线条检测  返回的 %1";
-const SENGO1_QRRCGVALUE_MESSAGE0 = "  Sengo1  二维码识别  返回的 %1";
+const SENGO1_QRRCGVALUE_MESSAGE0 = "  Sengo1  二维码  返回的 %1";
 const SENGO1_GET_QRCODEVALUE_MESSAGE0 = "  Sengo1  二维码  返回的结果字符串";
 const SENGO1_DETECTEDCOLOR_MESSAGE0 = " Sengo1  颜色识别  识别到 %1";
 const SENGO1_DETECTEDBLOB_MESSAGE0 = " Sengo1  色块检测  检测到 %1块";
@@ -578,9 +578,13 @@ pythonGenerator.forBlock["Sengo1Begin"] = function (block) {
 
   pythonGenerator.definitions_["import_iic"] = "from machine import I2C";
   pythonGenerator.definitions_["import_Sentry"] = "from Sentry import *";
+  pythonGenerator.definitions_["sengo1_vision_e"] =
+    "class sengo1_vision_e:\n\tkVisionColor = 1\n\tkVisionBlob = 2\n\tkVisionBall = 3\n\tkVisionLine = 4\n\tkVisionCard = 6\n\tkVisionBody = 7\n\tkVisionFace = 8\n\tkVisionQrCode = 9\n\tkVisionMaxType = 10\n";
+
   pythonGenerator.definitions_["init_IIC"] = "i2c0 = I2C(0,freq=400000)";
+
   pythonGenerator.definitions_["init_Sengo1" + sentry] =
-    "sengo1" + " = Sentry(0x6,0x6" + sentry + ")";
+    `sengo1 = Sentry(0x6,0x6${sentry}sengo1_vision_e.kVisionQrCode, sengo1_vision_e.kVisionMaxType)`;
 
   return code;
 };
