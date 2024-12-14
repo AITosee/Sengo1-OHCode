@@ -1,2 +1,2 @@
-package.json
-autoPack.py
+node_modules
+dist
