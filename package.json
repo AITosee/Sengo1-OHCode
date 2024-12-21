@@ -10,7 +10,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git@github.com:AITosee/Sentry-Mixly.git"
+        "url": "git@github.com:AITosee/Sengo1-OHcode.git"
     },
     "dependencies": {
         "copy-webpack-plugin": "^11.0.0",
