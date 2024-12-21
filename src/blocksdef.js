@@ -666,7 +666,7 @@ pythonGenerator.forBlock["Sengo1Begin"] = function (block) {
 };
 
 // 设置 LEDn
-pythonGenerator.forBlock["Sentry1LedSetColor"] = function (block) {
+pythonGenerator.forBlock["Sengo1LedSetColor"] = function (block) {
     var detected_color = block.getFieldValue("detected_color");
     var undetected_color = block.getFieldValue("undetected_color");
     var level =
