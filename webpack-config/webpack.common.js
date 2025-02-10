@@ -23,6 +23,14 @@ module.exports = {
                     globOptions: {
                         ignore: ['**/*.js'] // 排除所有 .js 文件
                     }
+                },
+                {
+                    from: '**/*',
+                    context: path.resolve(ORI_DIR, 'origin/library'), // 指定 origin 目录为上下文
+                    to: path.resolve(DEST_DIR, 'library'), // 指定输出到 DEST_DIR/library
+                    globOptions: {
+                        ignore: ['**/*.js', '.DS_Store'] // 排除所有 .js 文件
+                    }
                 }
             ]
         }),

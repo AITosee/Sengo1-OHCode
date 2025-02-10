@@ -3,10 +3,7 @@ export const Sengo1Begin = function (block) {
     var mode = block.getFieldValue("mode_obj");
     var addr = block.getFieldValue("addr_obj");
 
-    pythonGenerator.definitions_["import_iic"] = "from machine import I2C";
-    pythonGenerator.definitions_["import_Sentry"] = "from Sentry import *";
-    pythonGenerator.definitions_["sengo1_vision_e"] =
-        "class sengo1_vision_e:\n\tkVisionColor = 1\n\tkVisionBlob = 2\n\tkVisionBall = 3\n\tkVisionLine = 4\n\tkVisionCard = 6\n\tkVisionBody = 7\n\tkVisionFace = 8\n\tkVisionQrCode = 9\n\tkVisionMaxType = 10\n";
+    pythonGenerator.definitions_["import_Sengo1"] = "from Sengo1 import *";
 
     if (mode == "uart2") {
         pythonGenerator.definitions_["import_UART"] =
@@ -16,11 +13,10 @@ export const Sengo1Begin = function (block) {
     } else {
         pythonGenerator.definitions_["import_IIC"] = "from machine import I2C";
         pythonGenerator.definitions_["init_IIC"] =
-            `${mode} = I2C(0,freq=400000)`;
+            `${mode} = I2C(1,freq=400000)`;
     }
 
-    pythonGenerator.definitions_["init_Sengo2"] =
-        `sengo1  = Sentry(0x6, ${addr} )`;
+    pythonGenerator.definitions_["init_Sengo2"] = `sengo1  = Sengo1(${addr})`;
     var code = `sengo1.begin(${mode})\n`;
     return code;
 };
@@ -57,8 +53,6 @@ export const Sengo1VisionSetStatus = function (block) {
     var VisionStatus = block.getFieldValue("VisionStatus");
     var vision_obj = block.getFieldValue("vision_obj");
     var code = "sengo1.Vision" + VisionStatus + "(" + vision_obj + ")\n";
-
-    pythonGenerator.definitions_["import_Sentry"] = "from Sentry import *";
 
     return code;
 };
@@ -158,8 +152,6 @@ export const Sengo1VisionDetectedCount = function (block) {
     var vision_obj = block.getFieldValue("vision_obj");
     var code = "sengo1.GetValue(" + vision_obj + ", sentry_obj_info_e.kStatus)";
 
-    pythonGenerator.definitions_["import_Sentry"] = "from Sentry import *";
-
     return [code, pythonGenerator.ORDER_ATOMIC];
 };
 
@@ -177,8 +169,6 @@ export const Sengo1VisionObjColor = function (block) {
         ", " +
         index +
         ")";
-
-    pythonGenerator.definitions_["import_Sentry"] = "from Sentry import *";
 
     return [code, pythonGenerator.ORDER_ATOMIC];
 };
@@ -201,8 +191,6 @@ export const Sengo1VisionObj = function (block) {
         index +
         ")";
 
-    pythonGenerator.definitions_["import_Sentry"] = "from Sentry import *";
-
     return [code, pythonGenerator.ORDER_ATOMIC];
 };
 
@@ -220,8 +208,6 @@ export const Sengo1VisionObjLine = function (block) {
         ", " +
         index +
         ")";
-
-    pythonGenerator.definitions_["import_Sentry"] = "from Sentry import *";
 
     return [code, pythonGenerator.ORDER_ATOMIC];
 };
@@ -241,15 +227,11 @@ export const Sengo1VisionObjQr = function (block) {
         index +
         ")";
 
-    pythonGenerator.definitions_["import_Sentry"] = "from Sentry import *";
-
     return [code, pythonGenerator.ORDER_ATOMIC];
 };
 
 export const Sengo1GetQrValue = function (block) {
     var code = "sengo1.GetQrCodeValue()";
-
-    pythonGenerator.definitions_["import_Sentry"] = "from Sentry import *";
 
     return [code, pythonGenerator.ORDER_ATOMIC];
 };
@@ -270,8 +252,6 @@ export const Sengo1DetectedColor = function (block) {
         lable +
         ")";
 
-    pythonGenerator.definitions_["import_Sentry"] = "from Sentry import *";
-
     return [code, pythonGenerator.ORDER_ATOMIC];
 };
 
@@ -290,8 +270,6 @@ export const Sengo1DetectedBlob = function (block) {
         ") == " +
         lable +
         ")";
-
-    pythonGenerator.definitions_["import_Sentry"] = "from Sentry import *";
 
     return [code, pythonGenerator.ORDER_ATOMIC];
 };
@@ -312,8 +290,6 @@ export const Sengo1DetectedBall = function (block) {
         lable +
         ")";
 
-    pythonGenerator.definitions_["import_Sentry"] = "from Sentry import *";
-
     return [code, pythonGenerator.ORDER_ATOMIC];
 };
 
@@ -332,8 +308,6 @@ export const Sengo1DetectedCard = function (block) {
         ") == " +
         lable +
         ")";
-
-    pythonGenerator.definitions_["import_Sentry"] = "from Sentry import *";
 
     return [code, pythonGenerator.ORDER_ATOMIC];
 };
