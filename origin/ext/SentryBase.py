@@ -95,6 +95,14 @@ kRegResultData5H = 0x88
 kRegResultData5L = 0x89
 kRegSn = 0xD0
 
+# sentry_camera_white_balance
+class sentry_camera_white_balance_e:
+    kAutoWhiteBalance = 0
+    kLockWhiteBalance = 1
+    kWhiteLight = 2
+    kYellowLight = 3
+    kWhiteBalanceCalibrating = 4
+
 
 # sentry_obj_info
 class sentry_obj_info_e:
@@ -755,8 +763,7 @@ class SentryBase:
 
         elif communication_port == None:
             from machine import I2C, Pin  # pylint: disable=import-error
-            communication_port = I2C(
-                scl=Pin(Pin.P19), sda=Pin(Pin.P20), freq=400000)
+            communication_port = I2C(1)
             return self.begin(communication_port)
 
         else:
