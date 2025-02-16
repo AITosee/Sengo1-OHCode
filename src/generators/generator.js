@@ -13,7 +13,7 @@ export const Sengo1Begin = function (block) {
     } else {
         pythonGenerator.definitions_["import_IIC"] = "from machine import I2C";
         pythonGenerator.definitions_["init_IIC"] =
-            `${mode} = I2C(1,freq=400000)`;
+            `${mode} = I2C(1,freq=400000)\nif ${addr} not in ${mode}.scan():\n    ${mode} = I2C(0,freq=400000)`;
     }
 
     pythonGenerator.definitions_["init_Sengo2"] = `sengo1  = Sengo1(${addr})`;

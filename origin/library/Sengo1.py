@@ -1,13 +1,4 @@
 
-from Sentry import SentryBase
-from Sentry import LOG_ERROR,LOG_DEBUG
-from Sentry import (sentry_obj_info_e,
-                        sentry_mode_e,
-                        sentry_led_color_e,
-                        color_label_e,
-                        apriltag_vision_mode_e,
-                        class20_label_e)
-
 # sengo1 vision
 class sengo1_vision_e:
     kVisionColor = 1
@@ -32,7 +23,24 @@ class ball_label_e:
     kBallTableTennis = 1
     kBallTennis = 2
 
-class Sengo1(SentryBase):
-    sengo1_DEVICE_ID = 0x06
-    def __init__(self, address=0x60, log_level=LOG_ERROR):
-        super().__init__(self.sengo1_DEVICE_ID,address,log_level, sengo1_vision_e.kVisionQrCode, sengo1_vision_e.kVisionMaxType)
+try :
+    from Sentry import Sentry as SentryBase
+    from Sentry import sentry_color_label_e as color_label_e
+    from Sentry import sentry_obj_info_e,sentry_led_color_e
+
+    class Sengo1(SentryBase):
+        sengo1_DEVICE_ID = 0x06
+        def __init__(self, address=0x60, log_level=LOG_ERROR):
+            super().__init__(self.sengo1_DEVICE_ID,address)
+
+except ImportError:
+    from Sentry import SentryBase
+    from Sentry import LOG_ERROR,LOG_DEBUG
+    from Sentry import color_label_e,sentry_obj_info_e,sentry_led_color_e
+
+
+
+    class Sengo1(SentryBase):
+        sengo1_DEVICE_ID = 0x06
+        def __init__(self, address=0x60, log_level=LOG_ERROR):
+            super().__init__(self.sengo1_DEVICE_ID,address,log_level, sengo1_vision_e.kVisionQrCode, sengo1_vision_e.kVisionMaxType)
