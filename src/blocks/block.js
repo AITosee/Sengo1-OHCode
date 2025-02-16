@@ -88,8 +88,8 @@ export const sengo1_vision_card_objs = function () {
 
 export const sengo1_vision_ball_objs = function () {
     return [
-        [ZhHansMsg.SENGO1_BALLTABLETENNIS, "Sengo1::kBallTableTennis"],
-        [ZhHansMsg.SENGO1_BALLTENNIS, "Sengo1::kBallTennis"],
+        [ZhHansMsg.SENGO1_BALLTABLETENNIS, "ball_label_e.kBallTableTennis"],
+        [ZhHansMsg.SENGO1_BALLTENNIS, "ball_label_e.kBallTennis"],
     ];
 };
 

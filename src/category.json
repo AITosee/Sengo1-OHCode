@@ -89,7 +89,7 @@
         }
       },
       "fields": {
-        "lable": "sentry_color_label_e.kColorRed"
+        "lable": "color_label_e.kColorRed"
       }
     },
     {
@@ -142,7 +142,7 @@
       "kind": "BLOCK",
       "type": "Sengo1DetectedBlob",
       "fields": {
-        "lable": "sentry_color_label_e.kColorRed"
+        "lable": "color_label_e.kColorRed"
       }
     },
     {

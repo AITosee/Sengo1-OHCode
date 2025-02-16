@@ -29,9 +29,9 @@ try :
     from Sentry import sentry_obj_info_e,sentry_led_color_e
 
     class Sengo1(SentryBase):
-        sengo1_DEVICE_ID = 0x06
-        def __init__(self, address=0x60, log_level=LOG_ERROR):
-            super().__init__(self.sengo1_DEVICE_ID,address)
+        SENGO1_DEVICE_ID = 0x06
+        def __init__(self, address=0x60):
+            super().__init__(self.SENGO1_DEVICE_ID,address)
 
 except ImportError:
     from Sentry import SentryBase
@@ -41,6 +41,6 @@ except ImportError:
 
 
     class Sengo1(SentryBase):
-        sengo1_DEVICE_ID = 0x06
+        SENGO1_DEVICE_ID = 0x06
         def __init__(self, address=0x60, log_level=LOG_ERROR):
-            super().__init__(self.sengo1_DEVICE_ID,address,log_level, sengo1_vision_e.kVisionQrCode, sengo1_vision_e.kVisionMaxType)
+            super().__init__(self.SENGO1_DEVICE_ID,address,log_level, sengo1_vision_e.kVisionQrCode, sengo1_vision_e.kVisionMaxType)
