@@ -24,9 +24,9 @@ class ball_label_e:
     kBallTennis = 2
 
 try :
-    from Sentry import Sentry as SentryBase
-    from Sentry import sentry_color_label_e as color_label_e
-    from Sentry import sentry_obj_info_e,sentry_led_color_e
+    from SentryBase import Sentry as SentryBase
+    from SentryBase import sentry_color_label_e as color_label_e
+    from SentryBase import sentry_obj_info_e,sentry_led_color_e
 
     class Sengo1(SentryBase):
         SENGO1_DEVICE_ID = 0x06
