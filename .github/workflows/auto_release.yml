@@ -50,7 +50,7 @@ jobs:
       - name: Build package
         run: |
           npm install
-          npm run build:dev
+          npm run build:prod
           cd dist 
           tree
           cp -rv ${PACKAGE_NAME}.zip ${GITHUB_WORKSPACE}
