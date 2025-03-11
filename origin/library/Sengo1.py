@@ -24,9 +24,9 @@ class ball_label_e:
     kBallTennis = 2
 
 try :
-    from SentryBase import Sentry as SentryBase
-    from SentryBase import sentry_color_label_e as color_label_e
-    from SentryBase import sentry_obj_info_e,sentry_led_color_e
+    from Sentry import Sentry as SentryBase
+    from Sentry import sentry_color_label_e as color_label_e
+    from Sentry import sentry_obj_info_e,sentry_led_color_e
 
     class Sengo1(SentryBase):
         SENGO1_DEVICE_ID = 0x06
@@ -34,9 +34,9 @@ try :
             super().__init__(self.SENGO1_DEVICE_ID,address)
 
 except ImportError:
-    from Sentry import SentryBase
-    from Sentry import LOG_ERROR,LOG_DEBUG
-    from Sentry import color_label_e,sentry_obj_info_e,sentry_led_color_e
+    from SentryBase import SentryBase
+    from SentryBase import LOG_ERROR,LOG_DEBUG
+    from SentryBase import color_label_e,sentry_obj_info_e,sentry_led_color_e
 
 
 
