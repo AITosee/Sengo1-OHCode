@@ -1,6 +1,6 @@
 {
   "Device": "大师兄板",
-  "Name": "Sengo1 视觉传感器",
-  "Description": "Sengo1视觉模块",
-  "HelpUrl": ""
+  "Name": "Sengo1视觉传感器",
+  "Description": "入门级AI视觉模块，支持二维码与人脸识别，积木外壳",
+  "HelpUrl": "https://tosee.readthedocs.io/zh/latest/"
 }

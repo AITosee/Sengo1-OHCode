@@ -105,8 +105,7 @@ export const vision_obj_card_dict = function () {
 export const Sengo1Begin = {
     init: function () {
         var mode_objs = [
-            ["I2C", "i2c0"],
-            ["UART", "uart2"],
+            ["I2C", "i2c0"]
         ];
 
         this.appendDummyInput()
