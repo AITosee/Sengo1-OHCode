@@ -334,7 +334,7 @@ export const Sengo1VisionDetectedCount = {
             )
             .appendField(ZhHansMsg.SENGO1_DETECTED_NUMBER);
         this.setInputsInline(true);
-        this.setOutput(true, Number);
+        this.setOutput(true, "Number");
         this.setColour("#EAA20A");
     },
 };
@@ -353,7 +353,7 @@ export const Sengo1VisionObjColor = {
                 "vision_res_obj",
             )
             .appendField(ZhHansMsg.SENGO1_VISION_RESULT);
-        this.setOutput(true, Number);
+        this.setOutput(true, "Number");
         this.setInputsInline(true);
         this.setColour("#EAA20A");
     },
@@ -379,7 +379,7 @@ export const Sengo1VisionObj = {
                 "vision_res_obj",
             )
             .appendField(ZhHansMsg.SENGO1_VISION_RESULT);
-        this.setOutput(true, Number);
+        this.setOutput(true, "Number");
         this.setInputsInline(true);
         this.setColour("#EAA20A");
     },
@@ -400,7 +400,7 @@ export const Sengo1VisionObjLine = {
                 "vision_res_obj",
             )
             .appendField(ZhHansMsg.SENGO1_VISION_RESULT);
-        this.setOutput(true, Number);
+        this.setOutput(true, "Number");
         this.setInputsInline(true);
         this.setColour("#EAA20A");
     },
@@ -424,7 +424,7 @@ export const Sengo1VisionObjQr = {
                 "vision_res_obj",
             )
             .appendField(ZhHansMsg.SENGO1_VISION_RESULT);
-        this.setOutput(true, Number);
+        this.setOutput(true, "Number");
         this.setInputsInline(true);
         this.setColour("#EAA20A");
     },
@@ -440,7 +440,7 @@ export const Sengo1GetQrValue = {
             .appendField(new Blockly.FieldDropdown(_vision_objs), "vision_obj")
             .appendField(ZhHansMsg.SENGO1_GET_QRCODEVALUE);
         this.setInputsInline(true);
-        this.setOutput(true, String);
+        this.setOutput(true, "String");
         this.setColour("#EAA20A");
     },
 };
@@ -465,7 +465,7 @@ export const Sengo1DetectedColor = {
                 ),
                 "lable",
             );
-        this.setOutput(true, Boolean);
+        this.setOutput(true, "Boolean");
         this.setInputsInline(true);
         this.setColour("#EAA20A");
     },
@@ -489,7 +489,7 @@ export const Sengo1DetectedBlob = {
                 "lable",
             )
             .appendField(ZhHansMsg.SENGO1_VISION_BLOCK);
-        this.setOutput(true, Boolean);
+        this.setOutput(true, "Boolean");
         this.setInputsInline(true);
         this.setColour("#EAA20A");
     },
@@ -513,7 +513,7 @@ export const Sengo1DetectedBall = {
                 ),
                 "lable",
             );
-        this.setOutput(true, Boolean);
+        this.setOutput(true, "Boolean");
         this.setInputsInline(true);
         this.setColour("#EAA20A");
     },
@@ -536,7 +536,7 @@ export const Sengo1DetectedCard = {
                 ),
                 "lable",
             );
-        this.setOutput(true, Boolean);
+        this.setOutput(true, "Boolean");
         this.setInputsInline(true);
         this.setColour("#EAA20A");
     },
