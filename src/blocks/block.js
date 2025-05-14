@@ -24,7 +24,7 @@ export const vision_qr_objs = function () {
     return [
         [ZhHansMsg.SENGO1_STATE_VALUE_X, "sentry_obj_info_e.kXValue"],
         [ZhHansMsg.SENGO1_STATE_VALUE_Y, "sentry_obj_info_e.kYValue"],
-        [ZhHansMsg.SENGO1_STATE_VALUE_WIDTH, "ksentry_obj_info_e.kWidthValue"],
+        [ZhHansMsg.SENGO1_STATE_VALUE_WIDTH, "sentry_obj_info_e.kWidthValue"],
         [ZhHansMsg.SENGO1_STATE_VALUE_HEIGHT, "sentry_obj_info_e.kHeightValue"],
     ];
 };
