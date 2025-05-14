@@ -24,7 +24,7 @@ export const vision_qr_objs = function () {
     return [
         [ZhHansMsg.SENGO1_STATE_VALUE_X, "sentry_obj_info_e.kXValue"],
         [ZhHansMsg.SENGO1_STATE_VALUE_Y, "sentry_obj_info_e.kYValue"],
-        [ZhHansMsg.SENGO1_STATE_VALUE_WIDTH, "ksentry_obj_info_e.WidthValue"],
+        [ZhHansMsg.SENGO1_STATE_VALUE_WIDTH, "ksentry_obj_info_e.kWidthValue"],
         [ZhHansMsg.SENGO1_STATE_VALUE_HEIGHT, "sentry_obj_info_e.kHeightValue"],
     ];
 };
@@ -65,8 +65,8 @@ export const sengo1_vision_objs = function () {
         [ZhHansMsg.SENGO1_VISION_VISIONBALL, "sengo1_vision_e.kVisionBall"],
         [ZhHansMsg.SENGO1_VISION_VISIONLINE, "sengo1_vision_e.kVisionLine"],
         [ZhHansMsg.SENGO1_VISION_VISIONCARD, "sengo1_vision_e.kVisionCard"],
-        [ZhHansMsg.SENGO1_VISION_VISIONFACE, "sengo1_vision_e.kVisionFace"],
         [ZhHansMsg.SENGO1_VISION_VISIONBODY, "sengo1_vision_e.kVisionBody"],
+        [ZhHansMsg.SENGO1_VISION_VISIONFACE, "sengo1_vision_e.kVisionFace"],
         [ZhHansMsg.SENGO1_VISION_VISIONQRCODE, "sengo1_vision_e.kVisionQrCode"],
     ];
 };
